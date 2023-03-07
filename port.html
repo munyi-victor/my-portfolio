@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Victor Munyi</title>
+    <link rel="stylesheet" href="portstyle.css">
+    <script src="https://kit.fontawesome.com/e4afd5777a.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <nav id="navbar"> 
+        <img src="D:\media\nobg.png" class="img1">
+        <h3>Victor Munyi</h3>
+        <div class="links">
+            <a href=" " onclick="srollMe()"><button type="button">Home</button></a>
+            <button type="button">Projects</button>
+            <button type="button" onclick="about()">About</button>
+            <button type="button" onclick="viewMe()">Contacts</button>
+        </div>
+    </nav>
+    <br>
+    <section class="intro">
+        <br>
+        <img src="D:\media\munyi.png" class="img2"><br><br><br><br><br><br>
+        <h1><b>I am<br>Victor Munyi</b></h1><br><hr><br>
+        <h2>A website designer and developer</h2>
+    </section>
+    <br>
+    <section id="about">
+        <br>
+        <center><h1><b>About</b></h1></center>
+        <hr><br><br>
+        <p>
+            As said earlier, I am a full stack website developer. I am also a junior softweare developer,
+             with adequate knowledge in C++ programming language.<br>
+            As for now, I am concentrating much on web development to help you buil cool images of your business <br>
+            for easy marketting and branding. I have gone through research and training and gained knowledge
+            on markets,<br> hence I'm able to make your business much presentable and professional through websites.<br>
+        </p>
+        <p>
+            I am very ready for hirig and I'm eager to serve my clients with utmost sincerity to make sure<br>
+            they will never regret wirking with me. I am a cool person to work with and can receive and work <br>
+            with any kind of person.
+        </p>
+    </section><br>
+
+    <section id="contact"><br>
+        <h1>Get in Touch</h1>
+        <div class="conta">
+            <form method="post">
+                <input type="text" id="name" placeholder="Your Name" required>
+                <input type="email" id="email" placeholder="Email address" required>
+                <input type="text" id="subject" placeholder="Subject" required>
+                <textarea id="message" rows="4" placeholder="Type your message here"></textarea>
+                <button id="btn">Send</button>
+            </form>
+        </div>
+    </section><br>
+    <div id="quicky">
+        <br>
+        <h2 style="text-align: center;">You can find me on social platforms</h2><br><br>
+        <a href="https://www.linkedin.com/in/munyi-victor-581103221">LinkedIn</a><br>
+        <a href="https://twitter.com/munyi_victor?t=mQdWATil3yq59RvNBYEDuQ&s=09">Twitter</a><br>
+        <a href="https://www.instagram.com/invites/contact/?i=1a228fwb6na7u&utm_content=ohg97nu">Instagram</a><br>
+        <a href="https://wa.me/+254798101805">WhatsApp</a>
+        <br><br><br><br><br><br><br><br>
+        <p id="co">© Munyi Victor 2023</p>
+    </div>
+
+    <script src="https://smtpjs.com/v3/smtp.js">
+    </script>
+
+    <script>
+        var btn = document.getElementById('btn');
+        btn.addEventListener('click', function(e){
+            e.preventDefault();
+
+            var name = document.getElementById('name').value;
+            var email = document.getElementById('email').value;
+            var subject = document.getElementById('subject').value;
+            var message = document.getElementById('message').value;
+            var body = 'Name: ' + name + '<br/> Email: ' + email +
+            '<br/> Subject: ' + subject + 'Message: ' + message;
+
+            Email.send({
+                Host : "smtp.gmail.com",
+                Username : "victormunyi006@gmail.com",
+                Password : "DA05B3615F53905E3A39FAFCB2131167A02E",
+                To : 'victormunyi006@gmail.com',
+                From : email,
+                Subject : subject,
+                Body : body
+            }).then(
+            message => alert(message)
+            );
+        });
+    </script>
+
+    <script>
+
+        window.onscroll = function() {myFunction()};
+
+        var navbar = document.getElementById("navbar");
+        var sticky = navbar.offsetTop;
+
+        function myFunction() {
+            if (window.pageYOffset >= sticky) {
+                navbar.classList.add("sticky")
+              } else {
+                navbar.classList.remove("sticky");
+            }
+        }
+
+        function viewMe(){
+            document.getElementById("contact").scrollIntoView();
+        }
+        
+        function about(){
+            document.getElementById("about").scrollIntoView();
+        }
+
+        function scrollMe(){
+            window.scrollIntoView();
+        }
+
+    </script>
+
+</body>
+</html>
